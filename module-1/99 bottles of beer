@@ -1,0 +1,26 @@
+def countdown_beer(num_bottles):
+
+    for beer in range(num_bottles, 0, -1):
+        if beer > 1:
+            print(f"{beer} bottles of beer on the wall, {beer} bottles of beer.")
+            print(f"Take one down, pass it around, {beer-1} bottles of beer on the wall.")
+        else:
+            print("1 bottle of beer on the wall, 1 bottle of beer.")
+            print("Take one down, pass it around, no more bottles of beer on the wall.")
+    print("No more bottles of beer on the wall, no more bottles of beer.")
+    print("Go to the store and buy some more, 99 bottles of beer on the wall.")
+
+def main():
+
+    try:
+        num_bottles = int(input("How many bottles of beer are on the wall? "))
+        if num_bottles < 1:
+            print("Please enter a positive number.")
+            return
+        countdown_beer(num_bottles)
+        print("Time to add more to the wall!")
+    except InvalidInput:
+        print("Invalid input. Please enter a number.")
+
+if __name__ == "__main__":
+    main()  # Indented the main() call
